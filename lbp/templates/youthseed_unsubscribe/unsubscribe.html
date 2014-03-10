@@ -1,0 +1,20 @@
+
+{% load crispy_forms_tags %}
+<html>
+	<head>
+		<link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/home.css">
+	</head>
+
+	<body>
+		<div class="row">
+
+			<div class="span7 offset1">
+				<h1 id="unsubTitle">Youth SEED Newsletter</h1>
+				<p>If you would like to unsubscribe from the Youth SEED newsletter please enter your email in the form below.</p>
+				{% crispy form %}
+			</div>
+		</div>
+	</body>
+
+</html>

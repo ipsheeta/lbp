@@ -1,0 +1,126 @@
+{% load feincms_tags i18n pennyblack_tags %}
+{% newsletterstyle request text_only_text %}font-size:18px;font-family:times New Roman, serif; color:#000000;text-align:center;{% endnewsletterstyle %}
+{% newsletterstyle request text_only_title %}font-size:18px;font-family:times New Roman, serif;font-weight:normal; color:#000000;text-align:center;{% endnewsletterstyle %}
+{% newsletterstyle request link_style %}color:#333333;{% endnewsletterstyle %}
+{% if webview %}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>{% block title %}{{ newsletter.subject }}{% endblock %}</title>
+        <style type="text/css">
+            a:hover { text-decoration: underline !important; }
+        </style>
+    </head>
+{% endif %}
+<body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #8b8b85;" bgcolor="#8b8b85" leftmargin="0">
+<!--100% body table-->
+<table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#8b8b85">
+    <tr>
+        <td>
+            <!--top links-->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                {% if not webview %}
+                    <tr>
+                        <td valign="middle" align="center" height="45">
+                            <p style="font-size: 14px; line-height: 24px; font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; color: #5a5a5a; margin: 0px;">
+                                Is this email not displaying correctly? <a style="color: #a46888; text-decoration: none;" href="{{ newsletter.get_base_url }}{% url pennyblack.view mail.mail_hash %}">Try the web version.</a></p></td>
+                    </tr>
+                {% endif %}
+            </table>
+            <!--header-->
+            <table style="background-color: #fff;" width="684" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td valign="top" border="0" cellspacing="0" cellpadding="0">
+                                    <h1 style="margin:0 0 0 10px;"><img src="{{ newsletter.get_base_url }}{{ STATIC_URL }}images/grnFlag_WIN13.png" alt="Winter 2013"></h1>
+                                </td>
+                                <td valign="top">
+                                    <a href="https://www.facebook.com/pages/Youth-Seed/147231565436328"><img width="40" src="{{ newsletter.get_base_url }}{{ STATIC_URL }}images/facebook_news.png" alt="Like On Facebook"></a>
+                                    <a href="https://twitter.com/YouthSEED"><img width="40" src="{{ newsletter.get_base_url }}{{ STATIC_URL }}images/twitter_news.png" alt="Follow on Twitter"></a>
+                                </td>
+                                <td valign="top">
+                                             <h1 style="color: #333; margin-top: 20px; font-weight: normal;"><a href="http://www.bayareayouthseed.org"><img src="{{ newsletter.get_base_url }}{{ STATIC_URL }}images/ys-logo-370.png" alt="Youth SEED Logo"></a></h1>
+                                </td>
+                                <td valign="top">
+                                    <a href="http://www.communityin.org/Youth%20SEED.html"><img width="100" style="margin-top:5px;" src="{{ newsletter.get_base_url }}{{ STATIC_URL }}images/Donate.png" alt="Donate Button"></a>
+                                </td>
+                            </tr>
+                        </table><!--/header-->
+                        <!--line break-->
+                        <table style="background-color: #fff;" width="684" align="center" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td style="margin:0;"><img src="{{ newsletter.get_base_url }}{{ STATIC_URL }}images/ys-oakSky684.png" alt="Oakland Skyline"></td>
+                            </tr>
+                        </table><!--/line break--><!--/line break-->
+                        <!--email container-->
+                        <table bgcolor="#d6d6d4" cellspacing="0" border="0" align="center" cellpadding="30" width="684">
+                            <tr>
+                                <td>
+                                    <!--email content-->
+                                    <table cellspacing="0" border="0" id="email-content" cellpadding="0" width="624">
+                                        <tr>
+                                            <td>
+                                                {% for content in newsletter.content.main %}
+                                                    {% feincms_render_content content request %}
+                                                    {% if forloop.last %}
+                                                        <table cellspacing="0" border="0" cellpadding="0" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <hr>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center" valign="top" cellpadding="0" cellspacing="0" style="font-size: 12px;">
+                                                                    <p> <a href="http://bayareayouthseed.org/"> Youth SEED</a> is a fiscally sponsored project of <a href="http://www.communityin.org/Youth%20SEED.html"> Community Initiatives</a>.</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    {% else %}
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td valign="bottom" height="20"></td>
+                                                            </tr>
+                                                        </table>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                <!--/line break-->
+                                            </td>
+                                        </tr>
+                                    </table><!--/section 3-->
+                                </td>
+                            </tr>
+                        </table><!--/email content-->
+                    </td>
+                </tr>
+            </table><!--/email container-->
+            <!--footer-->
+            <table width="680" border="0" align="center" cellpadding="30" cellspacing="0">
+                <tr>
+                    <td valign="top" valign="top">
+                        <p style="font-size: 14px; line-height: 24px; font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; color: #b0a08b; margin: 0px;">
+                            You’re receiving this newsletter because you’ve subscribed to our newsletter. Not interested anymore?
+                            <a style="color: #a46888; text-decoration: none;" href="{{ newsletter.get_base_url }}/newsletter/unsubscribe/">Unsubscribe</a>
+                        </p>
+                    </td>
+                    <td valign="top" style="width:150px;"><p style="font-size: 14px; line-height: 18px; font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; color: #b0a08b; margin: 0px;">354 Pine St.#700
+                        </br> San Francisco
+                        </br> CA 94104
+                        </br> 415-852-9649</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="30"></td>
+                    <td height="30"></td>
+                </tr>
+            </table><!--/footer-->
+        </td>
+    </tr>
+</table><!--/100% body table-->
+</body>
+
+{% if webview %}
+    </html>
+{% endif %}

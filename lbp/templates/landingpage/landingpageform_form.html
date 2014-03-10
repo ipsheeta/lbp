@@ -1,0 +1,358 @@
+{% extends "landingpage/base.html" %}
+{% load crispy_forms_tags %}
+<!-- Custom styles for this template -->
+
+{% block main %}
+
+<style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+.carousel {
+    margin-bottom: 60px;
+}
+
+.carousel .container {
+    position: relative;
+    z-index: 9;
+}
+
+.carousel-control {
+    height: 80px;
+    margin-top: 0;
+    font-size: 120px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    background-color: transparent;
+    border: 0;
+    z-index: 10;
+}
+
+.carousel .item {
+    height: 500px;
+}
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+
+.carousel-caption {
+    background-color: transparent;
+    position: static;
+    max-width: 550px;
+    padding: 0 20px;
+    margin-top: 200px;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+    margin: 0;
+    line-height: 1.25;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+    margin-top: 10px;
+}
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+.marketing .span4 {
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing .span4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+    /* Featurettes
+    ------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+    padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+    overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+    margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+    margin-right: 40px;
+}
+.featurette-image.pull-right {
+    margin-left: 40px;
+}
+
+    /* Thin out the marketing headings */
+.featurette-heading {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+@media (max-width: 979px) {
+
+    .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+    }
+    .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+    }
+
+    .carousel .item {
+        height: 500px;
+    }
+    .carousel img {
+        width: auto;
+        height: 500px;
+    }
+
+    .featurette {
+        height: auto;
+        padding: 0;
+    }
+    .featurette-image.pull-left,
+    .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .navbar-inner {
+        margin: -20px;
+    }
+
+    .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .carousel .container {
+
+    }
+    .carousel .item {
+        height: 300px;
+    }
+    .carousel img {
+        height: 300px;
+    }
+    .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+    }
+    .carousel-caption h1 {
+        font-size: 30px;
+    }
+    .carousel-caption .lead,
+    .carousel-caption .btn {
+        font-size: 18px;
+    }
+
+    .marketing .span4 + .span4 {
+        margin-top: 40px;
+    }
+
+    .featurette-heading {
+        font-size: 30px;
+    }
+    .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+}
+
+    /* Mo Styles
+        -------------------------------------------------- */
+.topIcons img{
+    width: 200px;
+}
+
+form .control-group{
+    margin:  5px 0 5px 0;
+}
+
+
+</style>
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="{{ landing_page.hero_unit.url }}">
+            <div class="container">
+                <div class="carousel-caption">
+{#                    <img src="{{ STATIC_URL }}img/brij-logo2.png">by FTW Group#}
+                    <p class="lead">{{ landing_page.call_to_action }}</p>
+                    <a class="btn btn-large btn-primary" href="#brij-signup">Sign up today</a>
+                </div>
+            </div>
+        </div>
+{#        <div class="item">#}
+{#            <img src="{{ STATIC_URL }}img/slide-02.jpg" alt="">#}
+{#            <div class="container">#}
+{#                <div class="carousel-caption">#}
+{#                    <h1>Another example headline.</h1>#}
+{#                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>#}
+{#                    <a class="btn btn-large btn-primary" href="#">Learn more</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="item">#}
+{#            <img src="{{ STATIC_URL }}img/slide-03.jpg" alt="">#}
+{#            <div class="container">#}
+{#                <div class="carousel-caption">#}
+{#                    <h1>One more for good measure.</h1>#}
+{#                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>#}
+{#                    <a class="btn btn-large btn-primary" href="#">Browse gallery</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+    </div>
+{#    Not Using the Carousel atm#}
+{#    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>#}
+{#    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>#}
+</div><!-- /.carousel -->
+
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row topIcons">
+        <div class="span4">
+            <img src="{{ landing_page.point1.image.url }}">
+            <h2>{{ landing_page.point1.snippet_heading }}</h2>
+            <p>{{ landing_page.point1.snippet }}</p>
+            <p><a class="btn" href="#brij-signup">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+            <img src="{{ landing_page.point2.image.url }}">
+            <h2>{{ landing_page.point2.snippet_heading }}</h2>
+            <p>{{ landing_page.point2.snippet }}</p>
+            <p><a class="btn" href="#brij-signup">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+            <img src="{{ landing_page.point3.image.url }}">
+            <h2>{{ landing_page.point3.snippet_heading }}</h2>
+            <p>{{ landing_page.point3.snippet }}</p>
+            <p><a class="btn" href="#brij-signup">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image pull-right" src="{{ landing_page.point1.image.url }}">
+        {{ landing_page.point1.description|safe }}
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image pull-left" src="{{ landing_page.point2.image.url }}">
+        {{ landing_page.point2.description|safe }}
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image pull-right" src="{{ landing_page.point3.image.url }}">
+        {{ landing_page.point3.description|safe }}
+
+    </div>
+    <hr class="featurette-divider">
+    <div class="row text-center">
+        <div class="span6 offset3 greenbox" id="brij-signup">
+            <h2 class="featurette-heading">Reach out. <span class="muted"> We'd love to show you more. </span> </h2>
+            {% crispy form %}
+            <p>We promise to never sell your email address to any 3rd party or send you nasty spam.</p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 BRIJ </p>
+    </footer>
+
+</div><!-- /.container -->
+
+{% endblock %}
+
+{#{% block extra_js %}#}
+{#<!-- Bootstrap core JavaScript#}
+{#================================================== -->#}
+{#<!-- Placed at the end of the document so the pages load faster -->#}
+{#<script src="/assets/js/jquery.js"></script>#}
+{#<script src="/assets/js/bootstrap-transition.js"></script>#}
+{#<script src="/assets/js/bootstrap-alert.js"></script>#}
+{#<script src="/assets/js/bootstrap-modal.js"></script>#}
+{#<script src="/assets/js/bootstrap-dropdown.js"></script>#}
+{#<script src="/assets/js/bootstrap-scrollspy.js"></script>#}
+{#<script src="/assets/js/bootstrap-tab.js"></script>#}
+{#<script src="/assets/js/bootstrap-tooltip.js"></script>#}
+{#<script src="/assets/js/bootstrap-popover.js"></script>#}
+{#<script src="/assets/js/bootstrap-button.js"></script>#}
+{#<script src="/assets/js/bootstrap-collapse.js"></script>#}
+{#<script src="/assets/js/bootstrap-carousel.js"></script>#}
+{#<script src="/assets/js/bootstrap-typeahead.js"></script>#}
+{#<script src="/assets/js/bootstrap-affix.js"></script>#}
+{##}
+{#<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>#}
+{#<script src="/assets/js/holder/holder.js"></script>#}
+{##}
+{#<script src="/assets/js/application.js"></script>#}
+{##}
+{#{% endblock %}#}

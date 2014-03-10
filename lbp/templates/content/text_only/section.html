@@ -1,0 +1,14 @@
+{% load pennyblack_tags %}
+<table cellspacing="0" border="0" cellpadding="0" width="100%" style="background:#fbfbfb; border: solid 1px #aaaaa9;">
+    <tr>
+        <td valign="top" width="624" style="padding: 10px; border-left: solid 5px #0A5146;">
+            <h1 style="font-size: 24px; font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; color: #5a5a5a; margin-top: 12px; margin-bottom: 12px;">{% block title %}{% endblock %}</h1>
+{#            <h1 style="font-size: 24px; font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; color: #5a5a5a; margin-top: 12px; margin-bottom: 12px;">{{ content.title }}</h1>#}
+            <p style="font-size: 16px; line-height: 22px; font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; color: #5a5a5a; margin: 0px 12px 0px 0px;">
+{#                {{ content.text|safe }}#}
+                {% block text %}{% endblock %}
+            </p>
+{#            <p><span style="margin-bottom:25px; margin-left: 0px;"><a style="font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; background-color: #b0c07a; color: #fff; text-decoration: none; padding:1%; border: 1px #e4e9d1 solid; border-radius: 5px; text-align: center;" href="#">Donate</a></span><span style="font-family: Helvetica Neue, Helvetica, Arial, Sans-serif; margin-left: 20px; color: #333;">Read More <em style="color: #b0c07a;">&gt; &gt;</em></span><br></p>#}
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,65 @@
+body{
+	background: url('../images/pinstripe.png');
+	color: #373737;
+}
+a{
+	color: #0e5260;
+}
+h2{
+	padding-bottom: 4%;
+	padding-top: 4%;
+
+}
+hr{
+	height: 30px;
+	background: #29766a;
+	margin: 0px;
+}
+
+#backgroundYouth{
+/*	background: url('../images/youth.jpg') no-repeat 49%;
+*/}
+#backgroundYouth hr{
+		height: 5px;
+		background: #b3c181;
+		margin: 0px;
+	}
+#donateColumn{
+	margin-top: 11%
+}
+#donateColumn p{
+	margin-top: 5%;
+}
+#donateColumn .lead{
+	background: rgba(255,247,221,0.4);
+	padding: 4%;
+-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+#missionBox{
+/*	background-color: #
+*/	padding: 2%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+#footer{
+	background: #29766a;
+	color: #e7e7e7;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+#headLogo{
+	background: #fff;
+}
+#headLogo img{
+		padding-top: 6%;
+		padding-left: 6%;
+		padding-bottom: 2%;
+		width: 45%;
+}
+.btn{
+	margin-top: 4%;
+}
+.text-center{
+	text-align: center;
+}

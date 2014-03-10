@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+    {% block extra_css %}
+    {% endblock %}
+
+</head>
+<body>
+
+{% block main %}
+{% endblock %}
+
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/scrollHide.js"></script>
+{% block extra_js %}
+{% endblock %}
+
+</body>
+</html>
