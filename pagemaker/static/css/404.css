@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'DayPosterBlackRegular';
+    src: url('DAYPBL__-webfont.eot');
+    src: url('DAYPBL__-webfont.eot?#iefix') format('embedded-opentype'),
+         url('DAYPBL__-webfont.woff') format('woff'),
+         url('DAYPBL__-webfont.ttf') format('truetype'),
+         url('DAYPBL__-webfont.svg#DayPosterBlackRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+h1{
+	font-family: 'DayPosterBlackRegular', Arial, Sans-Serif;
+	font-size: 11em;
+    text-align: center;
+	color: #fdf7e7;
+	text-shadow: 5px 4px 4px #767676;
+}
+
+h2{
+	font-family: Arial, Sans-Serif;
+	color: #fdf7e7;
+	/*width: 100%;*/
+    margin-top: -20px;
+	text-shadow: 5px 3px 3px #282828;
+    text-align: center;
+}
+
+#e404{
+	margin-top: 10%;
+}

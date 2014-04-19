@@ -1,0 +1,171 @@
+@font-face {
+    font-family:'PatuaOneRegular';
+    src: url('../font/PatuaOne-Regular-webfont.eot');
+    src: url('../font/PatuaOne-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         //url('../font/PatuaOne-Regular-webfont.woff') format('woff'),
+         url('../font/PatuaOne-Regular-webfont.ttf') format('truetype'),
+         url('../font/PatuaOne-Regular-webfont.svg#PatuaOneRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@footer-back: rgba(61,111,165,0.6);
+@footer-color-h4: #494849;
+@footer-color-lia: #606060;
+@recede-color:#b8b4b4;
+.border-content-style{
+	background: rgba(249,251,253,0.4);
+	border-bottom: solid 1px #f3f3f4;
+	border-left: solid 1px #dedcdc;
+	border-right: solid 1px #dedcdc; 
+	padding: 2%;
+}
+.ribbon-back{
+		/* IE10 Consumer Preview */ 
+	background-image: -ms-radial-gradient(center top, ellipse farthest-corner, #859CB2 0%, #B5C3D0 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-radial-gradient(center top, ellipse farthest-corner, #859CB2 0%, #B5C3D0 100%);
+	/* Opera */ 
+	background-image: -o-radial-gradient(center top, ellipse farthest-corner, #859CB2 0%, #B5C3D0 100%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(radial, center top, 0, center top, 553, color-stop(0, #859CB2), color-stop(1, #B5C3D0));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-radial-gradient(center top, ellipse farthest-corner, #859CB2 0%, #B5C3D0 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: radial-gradient(ellipse farthest-corner at center top, #859CB2 0%, #B5C3D0 100%);
+
+}
+body{
+  background: url("../image/redox_01.png");
+}
+footer{
+  background: @footer-back;
+  border-top: #b0c07a solid 3px;
+  .copyright{
+  	color: @footer-color-h4;
+  }
+  .muted .btn-warning{
+  	margin-bottom: 4px;
+  }
+  .row{
+  	margin-top: 15px;
+  }
+  h4{
+  	color: @footer-color-h4;
+	font-size: 16px;
+	font-weight: bold;
+	  }
+  ul li a{
+  	color: @footer-color-lia;
+  }
+
+}
+li{
+	list-style: none;
+}
+.author{
+	color:  #c1cc8c;
+	font-size: 15px;
+	font-family: 'PatuaOneRegular' , serif;
+	margin-top: 0;
+}
+.author-color{
+	color: @recede-color;
+}
+.background-content{
+	.border-content-style;
+	 h2{
+		font-family: 'PatuaOneRegular'  , serif;
+		font-weight: bold;
+		color: #000;
+	}
+}
+.blog-post{
+	padding: 1%;
+	margin-top: 2%;
+	h2{
+		margin-bottom: 0;
+		margin-top: 27px;
+		font-size: 1.6em;
+	}
+	hr{
+		margin-top: 0;
+	}
+	img{
+		padding-top: 26px;
+	}
+	p.pull-right{
+		color: @recede-color;
+	}
+}
+.cap{
+	font-weight: bold;
+	color: #626262;
+	font-size: 15px;
+}
+.carousel-control{
+  font-size: 100px;
+  padding-top: 124px
+}
+.event-bar{
+	margin-top: 0;
+}
+.hero-unit{
+	a{
+		margin: 0;
+	}
+}
+.masthead{
+	.image img{
+		margin-bottom: 1%;
+	}
+}
+.mission-img{
+	margin-left: 21px;
+	margin-bottom: 21px;
+}
+.recede{
+	color: @recede-color;
+}
+.ribbon{
+	.ribbon-back;
+	border: solid 1px #cdd7e0;
+	padding: 1%;
+	font-family: 'PatuaOneRegular'  , serif;
+	font-weight: bold;
+	color: #fff;
+	margin: 0 -35px 0 -35px;
+}
+.statement{
+	font-size: 16px;
+}
+.subject-divide{
+	.ribbon-back;
+	height: 4px;
+	margin: 0;
+}
+.ys-statment{
+	font-size: 14px;
+	color: @footer-color-lia;
+	a{
+		color: #996633;
+	}
+}
+#acronym{
+	
+	p{
+	display: inline;
+	background: #f0ad4e;
+	text-align: center;
+	color: #ebebeb;
+	margin: 22px 0 0 88px;	
+	}
+	
+}
+#myCarousel{
+	img{
+      max-height: 350px;
+      margin: 0 auto;
+  }
+}

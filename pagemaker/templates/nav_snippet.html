@@ -1,0 +1,19 @@
+{% load applicationcontent_tags feincms_tags feincms_page_tags mptt_tags %}
+
+{% feincms_nav feincms_page level=1 depth=1 as toplevel %}
+<ul class="nav">
+    {% for p in toplevel %}
+        {% if p.is_leaf_node %}
+            <li {% if p|is_equal_or_parent_of:feincms_page %}class="active"{% endif %}><a href="{{ p.get_absolute_url }}"> {{ p.title}} </a> </li>
+        {% else %}
+            <li class="dropdown" {% if p|is_equal_or_parent_of:feincms_page %}class="active"{% endif %}>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ p.title }} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                {% for s in p.get_children %}
+                    <li><a href="{{ s.get_absolute_url }}">{{ s.title}}</a></li>
+                {% endfor %}
+            </ul>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

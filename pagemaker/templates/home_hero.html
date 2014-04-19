@@ -1,0 +1,76 @@
+{% extends "site_base.html" %}
+{% load applicationcontent_tags feincms_tags i18n feincms_page_tags compressed blog_widgets %}
+
+{% block extra_css %}
+
+{% feincms_frontend_editing feincms_page request %}
+
+{% compressed_css 'home_page' %}
+<!-- Le styles -->
+<style type="text/css">
+body {
+ margin-top:50px;
+}
+</style>
+{% endblock %}
+
+{% block hero %}
+<div class="hero-unit">
+  {% feincms_render_region feincms_page "banner" request %}
+</div><!-- /hero-unit -->
+{% endblock %}
+
+
+{% block main %}
+<h1 class="text-center ribbon">Love Balm Project</h1>
+{% feincms_render_region feincms_page "main" request %}
+<hr class="subject-divide">
+
+{% get_frontpage %}
+
+<div class="blog-post">
+    {% for item in entries %}
+    <p class="span5">
+        <h2><i class="icon-pencil icon-large recede"></i>&nbsp<a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+        </h2>
+    </p>
+    <p class="pull-right recede"><em>{{ item.published_on|date:"M d, Y" }}</em></p>
+    <hr>
+    <p class="offset1 author"><span class="recede">By</span> {{ item.author }}</p>
+    <p class="empha-text pull-left">&nbsp;</p>
+    <div class="row">
+        <div class="span3">
+              {% feincms_render_region item "featured" request %}
+        </div>
+        <div class ="span8">
+              {% feincms_render_region item "teaser" request %}
+              <a class="recede" href="{{ item.get_absolute_url }}">Read More &raquo; </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock main %}
+
+{% block sidebar %}
+<p>{% feincms_render_region feincms_page "sidebar" request %}</p>
+{{ block.super }}
+{% endblock %}
+
+{% block extra_js %}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-transition.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tab.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-popover.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-button.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-typeahead.js"></script>
+    <script src="{{ STATIC_URL }}js/showhide.js"></script>
+
+{% endblock %}

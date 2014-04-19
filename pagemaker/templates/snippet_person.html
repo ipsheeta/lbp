@@ -1,0 +1,18 @@
+<p>&nbsp;</p>
+{% if person.image %}
+<img class="span2 ys-person" src="{{ person.image.url }}" alt="{{ person.name }}" />
+{% endif %}
+<h3 class="empha-text pull-left;">{{ person.name }}</h3>
+
+<div class="recede">
+{% if person.title %}
+    <em class="recede">{{ person.title }}</em>
+{% endif %}
+<br>
+{%  if person.email %}
+    <em><i class="icon-envelope icon-resize-small icon-color">&nbsp</i><a href="mailto:{{ person.email }}">{{ person.email }}</a></em>
+{% endif %}
+</div>
+<p>{{ person.description }}</p>
+
+

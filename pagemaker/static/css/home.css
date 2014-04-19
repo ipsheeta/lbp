@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'ForumRegular';
+  src: url('../font/Forum-Regular-webfont.eot');
+  src: url('../font/Forum-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../font/Forum-Regular-webfont.woff') format('woff'), url('../font/Forum-Regular-webfont.ttf') format('truetype'), url('../font/Forum-Regular-webfont.svg#ForumRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.border-content-style {
+  background: rgba(249, 251, 253, 0.4);
+  border-top: solid 2px #c5c2c2;
+  border-bottom: solid 2px #f3f3f4;
+  border-left: solid 2px #dedcdc;
+  border-right: solid 2px #dedcdc;
+  padding: 2%;
+  margin-top: 5%;
+}
+body {
+  background: url("../image/redox_01.png");
+}
+footer {
+  background: rgba(61, 111, 165, 0.6);
+  border-top: #b0c07a solid 3px;
+}
+footer h4 {
+  color: #494849;
+}
+footer ul li a {
+  color: #606060;
+}
+li {
+  list-style: none;
+}
+.background-content {
+  background: rgba(249, 251, 253, 0.6);
+  border-top: solid 2px #c5c2c2;
+  border-bottom: solid 2px #f3f3f4;
+  border-left: solid 2px #dedcdc;
+  border-right: solid 2px #dedcdc;
+  padding: 2%;
+  margin-top: 5%;
+}
+.background-content h2 {
+  font-family: 'ForumRuglar', serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.background-content img {
+  margin-left: 21px;
+}
+.hero-unit img {
+  margin-top: 2%;
+}
+.hero-unit a {
+  margin: 0;
+}
+.masthead .image img {
+  margin-bottom: 1%;
+}
+.muted {
+  margin-left: 2%;
+}
+.ys-statment {
+  font-size: 12px;
+}
+#myCarousel img {
+  max-height: 350px;
+  margin: 0 auto;
+}

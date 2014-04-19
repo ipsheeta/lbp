@@ -1,0 +1,15 @@
+{#TODO:(MO) STYLE THIS AS NEEDED FOR THE MAIN SECTION#}
+
+<h2 class="event-bar"><i class="icon-calendar icon-large recede"></i>&nbsp{{ event.title }}</h2>
+{% if event.image %}
+    <a href="{{ event.url }}"><img src="{{ event.image.url }}" alt="" /></a>
+{% endif %}
+
+<p>{{ event.description }}</p>
+{% if event.url %}
+    <a class="recede" href="{{ event.url }}">Check it out &raquo; </a>
+
+{% endif %}
+<p>Your contribution is 100% tax-deductible!</p>
+<p><a class="btn btn-success" href="http://www.communityin.org/Youth%20SEED.html"><i class="icon-gift icon-large"></i> Donate&raquo;</a></p>
+

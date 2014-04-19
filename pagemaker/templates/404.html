@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load applicationcontent_tags feincms_tags feincms_page_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/404.css">
+{% endblock %}
+
+
+{% block contained %}
+<div id="header">
+    {% block header %}
+        <div id="logo"><a href="http://ftwgroup.com"><img src="{{ STATIC_URL }}image/FTW-header.png"></a></div>
+    {% endblock %}
+</div><!--header-->
+
+    {% block main %}
+        <div id="e404">
+            <p><h1>404</h1></p>
+            <p><h2>Error, page not found!</h2></p>
+        </div>
+    {% endblock %}
+</div>
+{% endblock %}
+
+{% block footer %}
+    <div class="row red_gradient footerpadding border">
+        <div class="three columns border_right">
+            <form class="nice" action="" method="post">
+                <address>
+                    <br>
+                    1305 Franklin St.</br>
+                    Oakland, CA </br>
+                    415-484-3593</br>
+                    <br>
+                    <span class=""><a class="email" href="mailto:info@ftwgroup.com"> info@ftwgroup.com </a></span>
+                </address>
+            </form>
+        </div>
+        <div class="eight columns">
+            <h3> <img src="{{ STATIC_URL }}image/pencil.png"> Latest Blog Entry</h3>
+            <hr class="black">
+            <h5> Coming Soon »</h5>
+            <p> Until then check us out on <a href="https://plus.google.com/107891252642168444762/posts">Google+</a></p>
+        </div>
+    </div>
+{% endblock footer %}
+
+

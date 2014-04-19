@@ -1,0 +1,148 @@
+{% extends "site_base.html" %}
+{% load applicationcontent_tags feincms_tags feincms_page_tags compressed %}
+{% load i18n blog_widgets %}
+
+
+{% block extra_css %}
+   {% compressed_css 'internal_page' %}
+    <style>
+
+            /* Sticky footer styles
+            -------------------------------------------------- */
+
+        html,
+        body {
+            height: 100%;
+            /* The html and body elements cannot have any padding or margin. */
+        }
+
+            /* Wrapper for page content to push down footer */
+        #wrap {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            /* Negative indent footer by its height */
+            margin: 0 auto -120px;
+        }
+
+            /* Set the fixed height of the footer here */
+        #push,
+        #footer {
+            height: 120px;
+        }
+        #footer {
+            background-color: #f5f5f5;
+        }
+
+            /* Lastly, apply responsive CSS fixes as necessary */
+        @media (max-width: 767px) {
+            #footer {
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+         /* Custom page CSS
+            -------------------------------------------------- */
+            /* Not required for template or sticky footer method. */
+
+        #wrap > .container {
+            padding-top: 0px;
+        }
+        .container .credit {
+            margin: 20px 0;
+        }
+
+        code {
+            font-size: 80%;
+        }
+
+    </style>
+{% endblock %}
+
+{% block main %}
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+    <div class="row">
+        <div class="sub-nav navbar-fixed-top">
+          <span class="offset1"><a href="#staff">Staff</a></span>
+          <span class="offset1"><a href="#board">Board</a></span>  
+          <span class="offset1"><a href="#success">Local Successes</a></span>  
+          <span class="offset1"><a href="#working">Working With</a></span>
+          <span class="offset1"><a href="#newsletters">Newsletters</a></span>
+          <span class="offset1"><a href="#address">Address</a></span>
+        </div>
+    </div>
+    <!-- Begin page content -->
+        <div class="hero-unit">
+            {% feincms_render_region feincms_page "banner" request %}
+        </div><!-- hero-unit -->
+    <div class="container"> 
+        <div class="background-content">
+            <h1 class="span4 blue-ribbon">ABOUT US</h1><br>
+            {% feincms_render_region feincms_page "about" request %}
+
+            <h2 id="staff"><i class="icon-user icon-large icon-color"></i>&nbsp;&nbsp;STAFF</h2>
+            <hr class="subject-divide">
+            {% feincms_render_region feincms_page "staff" request %}
+
+            <h2 id="board"><i class="icon-briefcase icon-large icon-color"></i>&nbsp;&nbsp;ADVISORY&nbsp; COMMITTEE</h2>
+            <hr class="subject-divide">
+            {% feincms_render_region feincms_page "advisory_committee" request %}
+
+            <h2 id="success"><i class="icon-star icon-large icon-color"></i>&nbsp;&nbsp;LOCAL SUCCESSES</h2>
+            <hr class="subject-divide">
+            {% feincms_render_region feincms_page "local_success" request %}
+
+            <h2 id="working"><i class="icon-globe icon-large icon-color"></i>&nbsp;&nbsp;WHO WE'RE WORKING WITH</h2>
+            <hr class="subject-divide">
+            {% feincms_render_region feincms_page "working_with" request %}
+
+            <h2 id="newsletters"><i class="icon-bullhorn icon-large icon-color"></i>&nbsp;&nbsp;NEWSLETTERS</h2>
+            <hr class="subject-divide">
+            <p>Click on the links below to view our previous email newsletters.&nbsp; If you are interested in receiving future newsletters, please email Gino Pastori-Ng: <span><em>gpastoring@bayareayouthseed.org</em></span></p>
+            {% feincms_render_region feincms_page "newsletters" request %}
+
+            <h2 id="address"><i class="icon-map-marker icon-large icon-color"></i>&nbsp;&nbsp;ADDRESS</h2>
+            <hr class="subject-divide">
+            <div>
+                <p>Youth SEED is made possible by YOUR support! Please make checks out to:</p>
+                <p><strong>Community Initiatives/Youth SEED</strong></p>
+                <p><strong>354 Pine St. Suite 700</strong></p>
+                <p><strong>San Francisco CA 94104</strong></p>
+            </div>
+            <p>Your contribution is 100% tax-deductible!</p>
+        </div><!-- page header -->
+        <img id="ys-sil"src="{{ STATIC_URL }}image/ys-sil.png">
+      </div><!-- background-content -->
+        <div id="push"></div>
+    </div><!-- container -->
+{% endblock main %}
+
+{% block extra_js %}
+
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{STATIC_URL}}/js/jquery.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-transition.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-alert.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-modal.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-tab.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-popover.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-button.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-typeahead.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-affix.js"></script>
+    <script src="{{ STATIC_URL }}js/showhide.js"></script>
+
+
+{% endblock %}
+

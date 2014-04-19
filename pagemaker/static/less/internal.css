@@ -1,0 +1,81 @@
+.blue-ribbon-back {
+  background: rgba(61, 111, 165, 0.6);
+  color: #fff;
+  margin-left: -12%;
+  padding-left: 5%;
+  border: solid 1px #b5c3d0;
+  vertical-align: middle;
+}
+a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+.background-content h1 {
+  font-family: 'PatuaOneRegular', serif;
+  padding-bottom: 2%;
+}
+.background-content h2 {
+  margin-bottom: 0;
+}
+.background-content .p3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.blue-ribbon {
+  background: rgba(61, 111, 165, 0.6);
+  color: #fff;
+  margin-left: -12%;
+  padding-left: 5%;
+  border: solid 1px #b5c3d0;
+  vertical-align: middle;
+}
+.carousel {
+  margin-top: 79px;
+}
+.hero-unit a {
+  margin-top: 1px;
+}
+.icon-color {
+  color: #f0ad4e;
+}
+.lead {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.recede {
+  color: #b8b4b4;
+}
+.sub-nav {
+  background-color: #dee4c2;
+  padding: 4px;
+  top: 50px;
+}
+.sub-nav a {
+  font-size: 16px;
+  color: #565556;
+}
+.sub-nav a:active {
+  background-color: #b2c070;
+  color: #494849;
+}
+.ul1 li {
+  line-height: 35px;
+}
+.ys-person {
+  padding-top: 6px;
+}
+#address {
+  margin-top: 18px;
+}
+#address p {
+  margin: 0;
+}
+#main-content-wrap {
+  margin-top: 50px;
+}
+#staff {
+  margin: 40px 0 0 0;
+}
+#ys-sil {
+  margin-bottom: -5px;
+}

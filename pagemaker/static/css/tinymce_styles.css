@@ -1,0 +1,15 @@
+/*Only create classes and id's in this file. Do not overwrite DOM elements*/
+.tm-p{
+    font-size:18px;
+    line-height: 31px;
+    margin-bottom: 2px;
+    color: #2b2a2c;
+    font-family:Trebuchet MS, Helvetica, sans-serif;
+}
+.tm-h4{font-family:"Eras", Helvetica, sans-serif;color: #3d3b3e;
+    font-size: 22px; margin-bottom:0px;
+}
+
+.example1{
+    color: #66cdaa;
+}

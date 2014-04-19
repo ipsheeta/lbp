@@ -1,0 +1,45 @@
+{% extends feincms_page.template.path|default:"internal.html" %}
+
+{% load feincms_tags i18n %}
+{% load highlight_code %}
+{% load compressed %}
+
+{% block extra_css %}
+    <!-- <link rel="stylesheet" href="{{ STATIC_URL }}css/ys_blog.css" media="screen" type="text/css"/> -->
+    {% compressed_css "internal_page" %}
+{% endblock %}
+
+{% block title %}{% trans "News" %} - {{ block.super }}{% endblock %}
+
+{% block main %}
+    <!-- contains hAtom microformats proposed by http://www.readability.com/publishers/guidelines/ -->
+
+<div class="hentry">
+    <h1 class="entry-title">{{ entry }}</h1>
+        <span class="small byline">
+            {% for category in entry.categories.all %}
+                <a href="{{ category.get_absolute_url }}">{{ category }}</a>{% if not forloop.last %},{% else %} | {% endif %}
+            {% endfor %}
+            {% if entry.author.get_full_name %}
+                <span class="author source-org vcard">
+                {% trans 'by' %} <span class="fn">{{ entry.author.get_full_name }}</span>
+            </span>
+            {% endif %}
+            <time datetime="{{ entry.published_on|date:'c' }}" pubdate>
+                <span class="day">{{ entry.published_on|date:"j" }}</span>
+                <span class="month">{{ entry.published_on|date:"M" }}</span>
+                <span class="year">{{ entry.published_on|date:"Y" }}</span>
+            </time>
+{# <time class="updated" datetime="{{ entry.last_changed|date:'c' }}"></time>#}
+        </span>
+        <div class="entry-content">
+            {% feincms_render_region entry "featured" request %}
+            {% feincms_render_region entry "main" request %}
+        </div>
+        <p>Tags:
+            {% for tag in entry.tags.all %}
+            <a href="{% url tagview tag  %}"> {{ tag.name.lower }}</a> {% if not forloop.last %},{% endif %}
+            {% endfor %}
+        </p>
+</div>
+{% endblock %}

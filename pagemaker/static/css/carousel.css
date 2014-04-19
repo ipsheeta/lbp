@@ -1,0 +1,10 @@
+.carousel i{
+    font-size: 60px;
+    position: absolute;
+    top:45%;
+    /*TODO (Mo) This is a hack */
+}
+
+.carousel img{
+    max-height: 400px;
+}

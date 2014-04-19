@@ -1,0 +1,23 @@
+.nav li a {
+  color: #eaeaea;
+}
+.navbar {
+  background: #b0c07a;
+}
+.navbar .nav li a {
+  color: #eaeaea;
+}
+.navbar-brand {
+  padding: 0;
+  padding-top: 15px;
+  padding-right: 7px;
+}
+.navbar-inverse .navbar-brand {
+  color: #e3e8d0;
+}
+.navbar-inverse .nav .active a {
+  background: #9bb057;
+}
+.navbar-inverse .nav .active a:hover {
+  background: #8ea14c;
+}

@@ -1,0 +1,62 @@
+{% load applicationcontent_tags feincms_tags feincms_page_tags compressed i18n blog_widgets %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="{{ feincms_page.meta_description }}" />
+    <meta name="keywords" content="{{ feincms_page.meta_keywords }}" />
+    <title>{{ feincms_page.page_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% compressed_css 'bootstrap' %}
+    <!-- above is the django-pipeline css -->
+
+    <link class="type-a-file" rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" media="screen" type="text/css"  />
+    <link class="type-a-file" rel="stylesheet" href="{{ STATIC_URL }}css/taf-swissface-m.css" media="screen" type="text/css" />
+
+    {% block extra_css %}
+    {% endblock %}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="{{STATIC_URL}}bootstrap/js/html5shiv.js"></script>
+      <script src="{{STATIC_URL}}bootstrap/js/respond/respond.min.js"></script>
+    <![endif]-->
+
+    {{ feincms_page.content.media }}
+</head>
+<body>
+
+
+{% include "nav.html" %}
+
+{% block hero %}
+{% endblock %}
+
+<div id="main-content-wrap" class="container">
+    <div class="row">
+        <div class="span8 background-content">
+
+        {% block main %}
+        {% endblock main %}
+
+        </div>
+        <div class="span3 offset1 background-content">
+
+        {% block sidebar %}
+        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FThe-Love-Balm-Project%2F216832495032469&amp;width=250&amp;height=290&amp;colorscheme=dark&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=false&amp;appId=252468468203695" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:290px;" allowTransparency="true"></iframe>
+	<br>
+        {% endblock %}
+
+        </div>
+    </div>
+</div> <!-- /container -->
+
+{% include "footer.html" %}
+
+{% block extra_js %}
+{% endblock %}
+
+</body>
+</html>
+
+
+

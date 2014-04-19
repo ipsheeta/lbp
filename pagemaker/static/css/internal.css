@@ -1,0 +1,28 @@
+a {
+  font-size: 16px;
+  color: slategray;
+}
+a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+.background-content {
+  padding: 5% 8%;
+  margin-bottom: 2%;
+}
+.background-content h1 {
+  font-family: 'ForumRuglar', serif;
+  font-size: 50px;
+  padding-bottom: 2%;
+}
+.background-content .p3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.hero-unit a {
+  margin-top: 1px;
+}
+.lead p {
+  font-size: 20px;
+  line-height: 1.25;
+}

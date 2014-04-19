@@ -1,0 +1,24 @@
+.box {
+  color: #fe33ac;
+  border-color: #fdcdea;
+}
+.box div {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+.rc {
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+}
+hr {
+  border-bottom: 1px solid #f3c657;
+  border-top: 1px solid #fcf1d7;
+  margin: 0px 0px 0px 0px;
+}
+#opposite_hr {
+  border-top: 1px solid #f1be3f;
+  border-bottom: 1px solid #fffefd;
+  margin: 0px 0px 0px 0px;
+}

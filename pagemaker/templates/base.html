@@ -1,0 +1,51 @@
+{% extends "site_base.html" %}
+{% load applicationcontent_tags feincms_tags feincms_page_tags mptt_tags blog_widgets %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+{% block contained %}
+<div id="header">
+    {% block header %}
+        <div id="logo"><a href="http://ftwgroup.com"><img src="{{ STATIC_URL }}image/FTW-header.png"></a></div>
+    {% endblock %}
+</div><!--header-->
+    <div class="bg shadow" id="content">
+    {% block main %}
+    {% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+<div class="row red_gradient footerpadding border">
+    <div class="three columns border_right">
+       <form class="nice" action="" method="post">
+            <address>
+                <br>
+                1305 Franklin St.</br>
+                Oakland, CA </br>
+                415-484-3593</br>
+                <br>
+                <span class=""><a class="email" href="mailto:info@ftwgroup.com"> info@ftwgroup.com </a></span>
+            </address>
+       </form>
+    </div>
+    <div class="eight columns">
+        {% get_frontpage %}
+        <h3> <img src="{{ STATIC_URL }}image/pencil.png"> Latest Blog Entry</h3>
+        <hr class="black">
+        {% for item in entries %}
+        <a href="{{ item.get_absolute_url }}"><h5>{{ item.title }}</h5></a>
+        {% endfor %}
+{#        <h5> Coming Soon »</h5>#}
+{#        <p> Until then check us out on <a href="https://plus.google.com/107891252642168444762/posts">Google+</a></p>#}
+    </div>
+</div>
+{% endblock footer %}
+
