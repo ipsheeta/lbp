@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /home/ubuntu/sites/ftwbrij
+python manage.py run_gunicorn -c gunicorn.conf.py
