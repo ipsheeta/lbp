@@ -18,21 +18,18 @@ urlpatterns = patterns('',
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': sitemaps}),
     url(r'^blog/', include('elephantblog.urls')),
-    #url(r'^demo/$', 'django_pygments.views.demo'),
-    #url(r'^blog/tag/(?P<slug>[-\w]+)/$', TagView.as_view(), name="tagview"),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^404/$', TemplateView.as_view(template_name='404.html')),
     url(r'^500/$', TemplateView.as_view(template_name='500.html')),
-    url(r'^newsletter/', include('pennyblack.urls'), name='pennyblack'),
-    url(r'^newsletter/unsubscribe/$', UnsubscribeView.as_view(template_name='youthseed_unsubscribe/unsubscribe.html'), name='pennyblack'),
-    url(r'^newsletter/unsubscribe/confirm/$', TemplateView.as_view(template_name='youthseed_unsubscribe/thank_you.html'), name='confirm-unsubscribe'),
-    (r'^', include('feincms.urls')),
+    #url(r'^newsletter/', include('pennyblack.urls'), name='pennyblack'),
+    #url(r'^newsletter/unsubscribe/$', UnsubscribeView.as_view(template_name='youthseed_unsubscribe/unsubscribe.html'), name='pennyblack'),
+    #url(r'^newsletter/unsubscribe/confirm/$', TemplateView.as_view(template_name='youthseed_unsubscribe/thank_you.html'), name='confirm-unsubscribe'),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('feincms.urls')),
     #url(r'^landing/', include('landingpage.urls')),
     # url(r'^ftwbrij/', include('ftwbrij.foo.urls')),
     url(r'^ckeditor/', include('ckeditor.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
 )
 
 if settings.DEBUG:

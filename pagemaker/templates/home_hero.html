@@ -1,5 +1,5 @@
 {% extends "site_base.html" %}
-{% load applicationcontent_tags feincms_tags i18n feincms_page_tags compressed blog_widgets %}
+{% load applicationcontent_tags feincms_tags i18n feincms_page_tags compressed %}
 
 {% block extra_css %}
 
@@ -25,31 +25,7 @@ body {
 <h1 class="text-center ribbon">Love Balm Project</h1>
 {% feincms_render_region feincms_page "main" request %}
 <hr class="subject-divide">
-
-{% get_frontpage %}
-
-<div class="blog-post">
-    {% for item in entries %}
-    <p class="span5">
-        <h2><i class="icon-pencil icon-large recede"></i>&nbsp<a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
-        </h2>
-    </p>
-    <p class="pull-right recede"><em>{{ item.published_on|date:"M d, Y" }}</em></p>
-    <hr>
-    <p class="offset1 author"><span class="recede">By</span> {{ item.author }}</p>
-    <p class="empha-text pull-left">&nbsp;</p>
-    <div class="row">
-        <div class="span3">
-              {% feincms_render_region item "featured" request %}
-        </div>
-        <div class ="span8">
-              {% feincms_render_region item "teaser" request %}
-              <a class="recede" href="{{ item.get_absolute_url }}">Read More &raquo; </a>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-{% endblock main %}
+{% endblock %}
 
 {% block sidebar %}
 <p>{% feincms_render_region feincms_page "sidebar" request %}</p>
