@@ -15,11 +15,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'lovebalm',#'/home/ubuntu/sites/youthseed/dev.db',                      # Or path to database file if using sqlite3.
-        'USER': 'ftwgroup',                      # Not used with sqlite3.
-        'PASSWORD': 'ftwgroup2013',                  # Not used with sqlite3.
-        'HOST': '10.2.119.13',                      # Set to empty string for localhost. Not used with sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -158,19 +158,19 @@ INSTALLED_APPS = [
     'feincms',
     'feincms.module.page',
     'feincms.module.medialibrary',
-    'pennyblack',
+#    'pennyblack',
     #'pennyblack.module.subscriber',
     'mptt',
     'pagemaker',
     'django.contrib.sitemaps',
-    'elephantblog',
-    'taggit',
-    'elephantblog.extensions.tags',
+   # 'elephantblog',
+  #  'taggit',
+ #   'elephantblog.extensions.tags',
     # 'forms_builder.forms',
-    'django_pygments',
-    'gunicorn',
-    'contacts',
-    'lbp', # so that we can use the upload donor ability
+#    'django_pygments',
+#    'gunicorn',
+#    'contacts',
+#    'lbp', # so that we can use the upload donor ability
 ]
 
 SOUTH_MIGRATION_MODULES = {
